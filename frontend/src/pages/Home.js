@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import AddToCartButton from '../components/Cart/AddToCartButton';
+import { API_BASE_URL } from '../config';
 import './Home.css';
 
 function Home() {
@@ -19,8 +20,8 @@ function Home() {
       try {
         setLoading(true);
         const [categoriesRes, productsRes] = await Promise.all([
-          fetch('http://localhost:5000/api/category'),
-          fetch('http://localhost:5000/api/products')
+          fetch(`${API_BASE_URL}/api/category`),
+          fetch(`${API_BASE_URL}/api/products`)
         ]);
 
         const categoriesData = await categoriesRes.json();

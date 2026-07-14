@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { API_BASE_URL } from '../../config';
 import './AdminOrders.css';
 
 const AdminOrders = () => {
@@ -16,7 +17,7 @@ const AdminOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch(`${API_BASE_URL}/api/orders`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -37,7 +38,7 @@ const AdminOrders = () => {
 
   const handleStatusUpdate = async (orderId, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/orders/${orderId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/orders/${orderId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +66,7 @@ const AdminOrders = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/orders/${orderId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/orders/${orderId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -294,7 +295,7 @@ const AdminOrders = () => {
                           src={
                             selectedOrder.paymentProof.startsWith('http')
                               ? selectedOrder.paymentProof
-                              : `http://localhost:5000${selectedOrder.paymentProof}`
+                              : `${API_BASE_URL}${selectedOrder.paymentProof}`
                           }
                           alt="Payment Proof" 
                           className="proof-image"
@@ -303,7 +304,7 @@ const AdminOrders = () => {
                           href={
                             selectedOrder.paymentProof.startsWith('http')
                               ? selectedOrder.paymentProof
-                              : `http://localhost:5000${selectedOrder.paymentProof}`
+                              : `${API_BASE_URL}${selectedOrder.paymentProof}`
                           }
                           target="_blank" 
                           rel="noopener noreferrer"

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { API_BASE_URL } from '../../config';
 import './AdminPaymentMethods.css';
 
 const AdminPaymentMethods = () => {
@@ -23,7 +24,7 @@ const AdminPaymentMethods = () => {
 
   const fetchPaymentMethods = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/payment-methods', {
+      const response = await fetch(`${API_BASE_URL}/api/payment-methods`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -94,8 +95,8 @@ const AdminPaymentMethods = () => {
       }
 
       const url = editingMethod 
-        ? `http://localhost:5000/api/payment-methods/${editingMethod._id}`
-        : 'http://localhost:5000/api/payment-methods';
+        ? `${API_BASE_URL}/api/payment-methods/${editingMethod._id}`
+        : `${API_BASE_URL}/api/payment-methods`;
       
       const method = editingMethod ? 'PUT' : 'POST';
 
@@ -145,7 +146,7 @@ const AdminPaymentMethods = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/payment-methods/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/payment-methods/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

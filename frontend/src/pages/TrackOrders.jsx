@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 import './TrackOrders.css';
 
 const TrackOrders = () => {
@@ -19,7 +20,7 @@ const TrackOrders = () => {
 
     const fetchOrders = async () => {
       try {
-        const url = 'http://localhost:5000/api/orders/user-orders';
+        const url = `${API_BASE_URL}/api/orders/user-orders`;
         const response = await fetch(url, {
           headers: {
             'Authorization': `Bearer ${token}`,

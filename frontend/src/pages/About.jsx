@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 import './About.css';
 
 const About = () => {
@@ -7,7 +8,7 @@ const About = () => {
   const [content, setContent] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/about')
+    fetch(`${API_BASE_URL}/api/about`)
       .then(res => res.json())
       .then(data => setContent(data.content || ''));
   }, []);

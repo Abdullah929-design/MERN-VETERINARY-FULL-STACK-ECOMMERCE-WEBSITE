@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../config';
 
 const AdminAboutSection = ({ token }) => {
   const [content, setContent] = useState('');
   const [input, setInput] = useState('');
   const [msg, setMsg] = useState('');
   useEffect(() => {
-    fetch('http://localhost:5000/api/about')
+    fetch(`${API_BASE_URL}/api/about`)
       .then(res => res.json())
       .then(data => {
         setContent(data.content || '');
@@ -15,7 +16,7 @@ const AdminAboutSection = ({ token }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMsg('');
-    const res = await fetch('http://localhost:5000/api/about', {
+    const res = await fetch(`${API_BASE_URL}/api/about`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import { API_BASE_URL } from '../config';
 import './CheckoutPage.css';
 
 const CheckoutPage = () => {
@@ -42,7 +43,7 @@ const CheckoutPage = () => {
   useEffect(() => {
     const fetchPaymentMethodDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/payment-methods/${paymentMethod}`);
+        const response = await fetch(`${API_BASE_URL}/api/payment-methods/${paymentMethod}`);
         if (response.ok) {
           const data = await response.json();
           setPaymentDetails(data);
@@ -129,7 +130,7 @@ const CheckoutPage = () => {
         formDataToSend.append('paymentProof', paymentProof);
       }
 
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch(`${API_BASE_URL}/api/orders`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
