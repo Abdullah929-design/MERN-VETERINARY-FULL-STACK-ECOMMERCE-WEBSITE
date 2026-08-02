@@ -32,6 +32,13 @@ This repository contains a veterinary e-commerce web application designed to let
 
 ---
 
+## Links
+Following is the live URL:
+https://magnificent-rabanadas-087581.netlify.app/
+
+
+---
+
 ## Features
 
 - User registration, login, and profile management
@@ -57,31 +64,25 @@ This repository contains a veterinary e-commerce web application designed to let
 
 ## Screenshots
 
-> NOTE: These are placeholders — add real screenshots to assets/screenshots/ and replace the paths below.
-
 ### Home / Landing
 
-![Home placeholder](assets/screenshots/home-placeholder.png)
+<img width="2048" height="1200" alt="magnificent-rabanadas-087581 netlify app_(Nest Hub)" src="https://github.com/user-attachments/assets/db36f0c4-32c2-4688-92f9-b882ad4ace46" />
 
-_Replace with a screenshot of the home or landing page._
 
 ### Product Listing
 
-![Products placeholder](assets/screenshots/products-placeholder.png)
+<img width="2048" height="1200" alt="magnificent-rabanadas-087581 netlify app_(Nest Hub) (1)" src="https://github.com/user-attachments/assets/b363a146-510f-49c8-bd3d-ed3eccd5364d" />
 
-_Replace with a product listing page screenshot._
 
 ### Product Detail
 
-![Product detail placeholder](assets/screenshots/product-detail-placeholder.png)
+<img width="2048" height="1200" alt="magnificent-rabanadas-087581 netlify app_(Nest Hub) (2)" src="https://github.com/user-attachments/assets/9c3d851b-47e1-4b2e-a29a-2c1adca79333" />
 
-_Replace with the product detail page screenshot._
 
 ### Admin Dashboard
 
-![Admin dashboard placeholder](assets/screenshots/admin-dashboard-placeholder.png)
+<img width="2048" height="1200" alt="magnificent-rabanadas-087581 netlify app_(Nest Hub) (3)" src="https://github.com/user-attachments/assets/29bc7ed0-a0f4-4879-b0ad-30d67936a3ab" />
 
-_Replace with an admin dashboard screenshot._
 
 ---
 
