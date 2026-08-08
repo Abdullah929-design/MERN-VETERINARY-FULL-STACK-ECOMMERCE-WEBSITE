@@ -9,6 +9,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [showDemoBox, setShowDemoBox] = useState(true);
   const navigate = useNavigate();
   const { login } = useAuth();
 
@@ -63,6 +64,26 @@ function Login() {
               Sign in to access your vet-approved dashboard.
             </p>
           </div>
+
+          {showDemoBox && (
+            <div className="mb-6 p-4 rounded-lg border border-emerald-brand/30 bg-emerald-brand/5 relative text-left">
+              <button
+                type="button"
+                onClick={() => setShowDemoBox(false)}
+                aria-label="Close"
+                className="absolute top-2 right-2 text-on-surface-variant hover:text-primary bg-transparent border-none cursor-pointer text-lg leading-none"
+              >
+                ×
+              </button>
+              <p className="font-label-sm text-label-sm font-bold text-primary mb-2">Demo Login (for testers)</p>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                <b>Admin:</b> admin@demo.com / AdminDemo123!
+              </p>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                <b>User:</b> user@demo.com / UserDemo123!
+              </p>
+            </div>
+          )}
 
           <form onSubmit={handleLogin} className="space-y-6">
             {error && (
